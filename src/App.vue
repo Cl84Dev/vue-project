@@ -1,9 +1,15 @@
 <script setup>
 import PokemonSearch from "./components/PokemonSearch.vue";
+import "./App.css";
 </script>
 
 <template>
-  <h1 class="text-center text-primary my-3">Pokemon</h1>
+  <div class="d-flex flex-column align-items-center">
+    <img
+      src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pok%C3%A9mon-Logo-PNG.png"
+      alt="Pokemon"
+    />
+  </div>
   <PokemonSearch />
 </template>
 
