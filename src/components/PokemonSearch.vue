@@ -35,6 +35,12 @@ export default {
       input_search: "",
       poke_name: "",
       poke_img: "",
+      hp: "",
+      attack: "",
+      defense: "",
+      special_attack: "",
+      special_defense: "",
+      speed: "",
       show_error: false,
       show_stats: false,
     };
@@ -47,6 +53,12 @@ export default {
         );
         this.poke_name = response.data.name;
         this.poke_img = response.data.sprites.other.dream_world.front_default;
+        this.hp = response.data.stats[0].base_stat;
+        this.attack = response.data.stats[1].base_stat;
+        this.defense = response.data.stats[2].base_stat;
+        this.special_attack = response.data.stats[3].base_stat;
+        this.special_defense = response.data.stats[4].base_stat;
+        this.speed = response.data.stats[4].base_stat;
         this.show_error = false;
         this.show_stats = false;
       } catch (error) {
@@ -101,9 +113,27 @@ export default {
         v-if="show_stats"
       >
         <MDBListGroup flush>
-          <MDBListGroupItem>Cras justo odio</MDBListGroupItem>
-          <MDBListGroupItem>Dapibus ac facilisis in</MDBListGroupItem>
-          <MDBListGroupItem>Vestibulum at eros</MDBListGroupItem>
+          <MDBListGroupItem
+            ><span class="fw-bold">HP: </span>{{ hp }}</MDBListGroupItem
+          >
+          <MDBListGroupItem
+            ><span class="fw-bold">Attack: </span>{{ attack }}</MDBListGroupItem
+          >
+          <MDBListGroupItem
+            ><span class="fw-bold">Defense: </span
+            >{{ defense }}</MDBListGroupItem
+          >
+          <MDBListGroupItem
+            ><span class="fw-bold">Special Attack: </span
+            >{{ special_attack }}</MDBListGroupItem
+          >
+          <MDBListGroupItem
+            ><span class="fw-bold">Special Defense: </span
+            >{{ special_defense }}</MDBListGroupItem
+          >
+          <MDBListGroupItem
+            ><span class="fw-bold">Speed: </span>{{ speed }}</MDBListGroupItem
+          >
         </MDBListGroup>
       </MDBCard>
     </div>
