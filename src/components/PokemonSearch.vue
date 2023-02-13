@@ -43,6 +43,7 @@ export default {
       speed: "",
       show_error: false,
       show_stats: false,
+      poke_data_chain: [],
     };
   },
   methods: {
@@ -70,6 +71,27 @@ export default {
     showStats() {
       this.show_stats = !this.show_stats;
     },
+    // async evolutionChain() {
+    //   try {
+    //     const response = await axios.get(
+    //       `https://pokeapi.co/api/v2/pokemon/${this.input_search.toLowerCase()}`
+    //     );
+    //     const species = await axios.get(response.data.species.url);
+    //     const evolutionChain = await axios.get(
+    //       species.data.evolution_chain.url
+    //     );
+    //     const first = evolutionChain.data.chain.species.name;
+    //     const second = first
+    //       ? evolutionChain.data.chain.evolves_to[0].species.name
+    //       : null;
+    //     const third = second
+    //       ? evolutionChain.data.chain.evolves_to[0].evolves_to[0].species.name
+    //       : null;
+    //     console.log(first, second, third);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // },
   },
 };
 </script>
