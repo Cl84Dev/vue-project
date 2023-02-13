@@ -3,7 +3,7 @@ import PokemonSearch from "./components/PokemonSearch.vue";
 </script>
 
 <template>
-  <h1 class="text-center text-primary">Pokemon</h1>
+  <h1 class="text-center text-primary my-3">Pokemon</h1>
   <PokemonSearch />
 </template>
 
