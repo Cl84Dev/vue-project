@@ -103,7 +103,7 @@ export default {
 </script>
 
 <template>
-  <main class="mx-auto my-5 d-flex flex-column align-items-center">
+  <main class="d-flex flex-column mx-3">
     <MDBInput
       v-model="input_search"
       inputGroup
@@ -117,10 +117,12 @@ export default {
         <MDBIcon icon="search" />
       </MDBBtn>
     </MDBInput>
-    <div v-if="show_error && !poke_data_chain">Pokemon not found</div>
+    <div v-if="show_error && !poke_data_chain" class="text-center">
+      Pokemon not found
+    </div>
     <div
       v-if="!show_error && poke_data_chain"
-      class="card p-3 my-3 border"
+      class="p-3 my-3 border rounded-3 bg-info"
       v-for="poke_data in poke_data_chain"
       :key="poke_data.data"
     >
@@ -130,6 +132,7 @@ export default {
             :src="poke_data.data.sprites.other.dream_world.front_default"
             top
             :alt="`${poke_data.data.name.toUpperCase()}`"
+            class="p-2"
           />
         </a>
         <MDBCardBody class="d-flex flex-column align-items-center">

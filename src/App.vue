@@ -5,12 +5,9 @@ import "./App.css";
 
 <template>
   <div class="d-flex flex-column align-items-center">
-    <img
-      src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pok%C3%A9mon-Logo-PNG.png"
-      alt="Pokemon"
-    />
+    <img src="../public/Pokémon-Logo.png" alt="Pokemon" class="m-2" />
+    <PokemonSearch />
   </div>
-  <PokemonSearch />
 </template>
 
 <style>
